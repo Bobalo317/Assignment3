@@ -3,6 +3,7 @@ package cse360assign3;
 public class Calculator {
 
 	private int total;
+	String histString = "0";
 	
 	/**
 	 * Initializes the total to 0 for the calculator.
@@ -30,6 +31,7 @@ public class Calculator {
 	
 	public void add (int value) {
 		total = total + value;
+		histString = histString + " + " + value;
 	}
 	
 	/**
@@ -40,6 +42,7 @@ public class Calculator {
 	
 	public void subtract (int value) {
 		total = total - value;
+		histString = histString + " - " + value;
 	}
 	
 	/**
@@ -50,6 +53,7 @@ public class Calculator {
 	
 	public void multiply (int value) {
 		total = total * value;
+		histString = histString + " * " + value;
 	}
 	
 	/**
@@ -65,14 +69,15 @@ public class Calculator {
 		else{
 			total = 0;
 		}
+		histString = histString + " / " + value;
 	}
 	
 	/**
 	 * Prints out the history of the calculator
 	 * 
-	 * @return a string of the history
+	 * @return histString a string of the history of the calculator
 	 */
 	public String getHistory () {
-		return "";
+		return histString;
 	}
 }
